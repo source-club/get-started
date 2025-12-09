@@ -39,14 +39,7 @@
     "release:minor-dryrun": "standard-version -r minor -i CHANGELOG.md --dry-run",
     "release:minor": "standard-version -r minor -i CHANGELOG.md",
     "release:patch-dryrun": "standard-version -r patch -i CHANGELOG.md --dry-run",
-    "release:patch": "standard-version -r patch -i CHANGELOG.md",
-    "workspace:version:major": "pnpm run --filter ./src/** version:major",
-    "workspace:version:minor": "pnpm run --filter ./src/** version:minor",
-    "workspace:version:patch": "pnpm run --filter ./src/** version:patch",
-    "workspace:version:premajor": "pnpm run --filter ./src/** version:premajor",
-    "workspace:version:preminor": "pnpm run --filter ./src/** version:preminor",
-    "workspace:version:prepatch": "pnpm run --filter ./src/** version:prepatch",
-    "workspace:version:prerelease": "pnpm run --filter ./src/** version:prerelease"
+    "release:patch": "standard-version -r patch -i CHANGELOG.md"
   },
   "devDependencies": {
     "@types/standard-version": "^7.1.3",
