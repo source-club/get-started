@@ -50,7 +50,14 @@
     "workspace:version:premajor": "pnpm run --filter ./src/** version:premajor",
     "workspace:version:preminor": "pnpm run --filter ./src/** version:preminor",
     "workspace:version:prepatch": "pnpm run --filter ./src/** version:prepatch",
-    "workspace:version:prerelease": "pnpm run --filter ./src/** version:prerelease"
+    "workspace:version:prerelease": "pnpm run --filter ./src/** version:prerelease",
+    "version:major": "pnpm version major --no-git-tag-version",
+    "version:minor": "pnpm version minor --no-git-tag-version",
+    "version:patch": "pnpm version patch --no-git-tag-version",
+    "version:premajor": "pnpm version premajor --preid Debug --no-git-tag-version",
+    "version:preminor": "pnpm version preminor --preid Debug --no-git-tag-version",
+    "version:prepatch": "pnpm version prepatch --preid Debug --no-git-tag-version",
+    "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version"
   },
   "version": "1.0.0-Debug.0"
 }
