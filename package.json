@@ -57,7 +57,8 @@
     "version:premajor": "pnpm version premajor --preid Debug --no-git-tag-version",
     "version:preminor": "pnpm version preminor --preid Debug --no-git-tag-version",
     "version:prepatch": "pnpm version prepatch --preid Debug --no-git-tag-version",
-    "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version"
+    "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version",
+    "version:prerelease:tag": "pnpm version prerelease --preid Debug --no-git-tag-version"
   },
   "version": "1.0.0"
 }
