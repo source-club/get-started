@@ -1,4 +1,11 @@
 # CHANGELOG
+## [1.0.1](https://github.com/source-club/get-started/compare/v1.0.0...v1.0.1) (2026-02-03)
+
+
+### CHORE
+
+* 调整 Git 管理脚本。 ([eb2dddf](https://github.com/source-club/get-started/commit/eb2dddfaafa7a741b7b4c426fa3a3fe4aefd4e83))
+
 ## 1.0.0 (2026-02-02)
 
 
