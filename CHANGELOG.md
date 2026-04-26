@@ -1,4 +1,12 @@
 # CHANGELOG
+## [1.1.0](https://github.com/source-club/get-started/compare/v1.0.1...v1.1.0) (2026-04-26)
+
+
+### Configuration
+
+**New Feature** [e142509]: 调整了 commit-and-tag-version 工具配置。 
+
+**New Feature** [cd6aaf7]: 调整了 commit-and-tag-version 工具默认 .versionrc 配置为备选。 
 ## [1.0.1](https://github.com/source-club/get-started/compare/v1.0.0...v1.0.1) (2026-02-03)
 
 
