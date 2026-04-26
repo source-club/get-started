@@ -64,6 +64,6 @@
   "defaultScope": "Unspecified",
   "writerOpts": {
     "groupBy": "scope",
-    "commitPartial": "**{{type}}** [{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}"
+    "commitPartial": "**{{type}}** [{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}\n"
   }
 }
