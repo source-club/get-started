@@ -1,4 +1,9 @@
 # CHANGELOG
+## [1.1.1](https://github.com/source-club/get-started/compare/v1.1.0...v1.1.1) (2026-04-26)
+
+
+**Bug Fixed** [9523ea6]: 更新了 Git 工具链配置文件。 
+
 ## [1.1.0](https://github.com/source-club/get-started/compare/v1.0.1...v1.1.0) (2026-04-26)
 
 

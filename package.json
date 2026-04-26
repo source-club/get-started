@@ -60,5 +60,5 @@
     "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version",
     "version:prerelease:tag": "pnpm version prerelease --preid Debug --no-git-tag-version"
   },
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
