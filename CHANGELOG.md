@@ -1,4 +1,15 @@
 # CHANGELOG
+## [1.2.0](https://github.com/source-club/get-started/compare/v1.1.3...v1.2.0) (2026-04-27)
+
+
+### General
+
+**New Feature**: 完成了 commit-and-tag-version 的完全配置。 ( See commit [2026-04-27 e93b7c9](https://github.com/source-club/get-started/commit/e93b7c9f222e7d02585eb64aa0bd937e06056bb8) )
+
+**Bug Fixed**: 修复了 commitPartial 模版中换行问题。 ( See commit [2026-04-27 42a161d](https://github.com/source-club/get-started/commit/42a161d1c4f3f34176d648f592ea572d34ef26f1) )
+
+**Bug Fixed**: 修复了生成模版中换行符问题。 ( See commit [2026-04-27 e43fa10](https://github.com/source-club/get-started/commit/e43fa10bd82c3c81298f62a36b78546579133a15) )
+
 
 ## [1.1.3](https://github.com/source-club/get-started/compare/v1.1.2...v1.1.3) (2026-04-27)
 
