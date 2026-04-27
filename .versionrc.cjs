@@ -74,6 +74,6 @@ module.exports = {
       return commit;
     },
     'groupBy': 'scope',
-    'commitPartial': '**{{type}}**: {{subject}} *#{{shortHash}} {{committerDate}}>*\n',
+    'commitPartial': '**{{type}}**: {{subject}} {{shortHash}} {{committerDate}}\n\n',
   },
 };
