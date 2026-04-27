@@ -1,4 +1,15 @@
 # CHANGELOG
+## [1.1.2](https://github.com/source-club/get-started/compare/v1.1.1...v1.1.2) (2026-04-27)
+
+
+### ⚠ BREAKING CHANGE
+
+* **General:** 调整了配置文件的格式为 cjs 脚本。
+
+### General
+
+**feat** []: 调整了 commit-and-tag-version 配置，增加了 transform 函数重写。 
+
 ## [1.1.1](https://github.com/source-club/get-started/compare/v1.1.0...v1.1.1) (2026-04-26)
 
 
