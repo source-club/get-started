@@ -69,6 +69,6 @@ module.exports = {
       return commit;
     },
     'groupBy': 'scope',
-    'commitPartial': '**{{type}}** [#{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}\n',
+    'commitPartial': '**{{type}}**: {{subject}} ({{#if author}}Commit by: @**{{author}}** {{/if}}See also: {{shortHash}})\n',
   },
 };
