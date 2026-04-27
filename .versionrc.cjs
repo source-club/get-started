@@ -70,13 +70,10 @@ module.exports = {
         commit.scope = 'General';
       }
       commit.shortHash = commit.hash.substring(0, 8);
-      const authorName =
-        commit.authorName || (commit.committer && commit.committer.name) || (commit.author && commit.author.name) || 'Unknown';
-      commit.author = authorName.split('<')[0].trim();
       commit.type = typeOptions?.section ?? commit.type;
       return commit;
     },
     'groupBy': 'scope',
-    'commitPartial': '**{{type}}**: {{subject}} ({{#if author}}Commit by: @**{{author}}** {{/if}}See also: {{shortHash}})\n',
+    'commitPartial': '**{{type}}**: {{subject}} *#{{shortHash}} {{committerDate}}>*\n',
   },
 };
