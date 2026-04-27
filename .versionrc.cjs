@@ -1,0 +1,73 @@
+module.exports = {
+  'types': [
+    {
+      'type': 'feat',
+      'section': 'New Feature',
+      'hidden': false,
+    },
+    {
+      'type': 'fix',
+      'section': 'Bug Fixed',
+      'hidden': false,
+    },
+    {
+      'type': 'docs',
+      'section': 'Documentation',
+      'hidden': false,
+    },
+    {
+      'type': 'refactor',
+      'section': 'Refactor',
+      'hidden': false,
+    },
+    {
+      'type': 'test',
+      'section': 'Test Case',
+      'hidden': false,
+    },
+    {
+      'type': 'perf',
+      'section': 'Optimization',
+      'hidden': false,
+    },
+    {
+      'type': 'revert',
+      'section': 'Revert',
+      'hidden': false,
+    },
+    {
+      'type': 'ci',
+      'section': 'CI & CD',
+      'hidden': true,
+    },
+    {
+      'type': 'chore',
+      'section': 'Other',
+      'hidden': true,
+    },
+    {
+      'type': 'style',
+      'section': 'Code Format',
+      'hidden': true,
+    },
+    {
+      'type': 'build',
+      'section': 'Build',
+      'hidden': true,
+    },
+  ],
+  'preMajor': true,
+  'header': '# CHANGELOG',
+  'releaseCommitMessageFormat': 'chore: Release v{{currentTag}} of Get-Started',
+  'commitUrlFormat': 'https://github.com/source-club/get-started/commit/{{hash}}',
+  'writerOpts': {
+    'transform': (commit) => {
+      if ((commit.scope ?? '').trim() === '') {
+        commit.scope = 'General';
+      }
+      return commit;
+    },
+    'groupBy': 'scope',
+    'commitPartial': '**{{type}}** [{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}\n',
+  },
+};
