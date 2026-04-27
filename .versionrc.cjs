@@ -62,6 +62,10 @@ module.exports = {
   'commitUrlFormat': 'https://github.com/source-club/get-started/commit/{{hash}}',
   'writerOpts': {
     'transform': (commit) => {
+      const typeOptions = module.exports.types.find((t) => t.type === commit.type);
+      if (typeOptions?.hidden) {
+        return;
+      }
       if ((commit.scope ?? '').trim() === '') {
         commit.scope = 'General';
       }
