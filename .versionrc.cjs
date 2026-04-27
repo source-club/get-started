@@ -65,10 +65,10 @@ module.exports = {
       if ((commit.scope ?? '').trim() === '') {
         commit.scope = 'General';
       }
-      commit.shortHash = commit.hash.substring(0, 7);
+      commit.shortHash = commit.hash.substring(0, 8);
       return commit;
     },
     'groupBy': 'scope',
-    'commitPartial': '**{{type}}** [{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}\n',
+    'commitPartial': '**{{type}}** [#{{shortHash}}]: {{subject}} {{#if author}}(@**{{author}}**){{/if}}\n',
   },
 };
