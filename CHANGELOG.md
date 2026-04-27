@@ -1,4 +1,15 @@
 # CHANGELOG
+## [1.1.3](https://github.com/source-club/get-started/compare/v1.1.2...v1.1.3) (2026-04-27)
+
+
+### General
+
+**New Feature**: 调整了短哈希为 8 位长度。 *#e183bd2e 2026-04-27>*
+**New Feature**: 完成了模版调整。 *#a0ad091b 2026-04-27>*
+**Bug Fixed**: 修复了短哈希丢失的问题。 *#23137345 2026-04-27>*
+**New Feature**: 增加了 Author 配置。 *#6189d1b6 2026-04-27>*
+**New Feature**: 增加了异常节点的配置验证。 *#9e1f76f0 2026-04-27>*
+
 ## [1.1.2](https://github.com/source-club/get-started/compare/v1.1.1...v1.1.2) (2026-04-27)
 
 
