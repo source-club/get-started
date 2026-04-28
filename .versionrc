@@ -1,16 +1,60 @@
 {
   "types": [
-    { "type": "feat", "section": "New Feature", "hidden": false },
-    { "type": "fix", "section": "Bug Fixed", "hidden": false },
-    { "type": "docs", "section": "Documentation", "hidden": false },
-    { "type": "refactor", "section": "Refactor", "hidden": false },
-    { "type": "test", "section": "Test Case", "hidden": false },
-    { "type": "perf", "section": "Optimization", "hidden": false },
-    { "type": "revert", "section": "Revert", "hidden": false },
-    { "type": "ci", "section": "CI & CD", "hidden": true },
-    { "type": "chore", "section": "Other", "hidden": true },
-    { "type": "style", "section": "Code Format", "hidden": true },
-    { "type": "build", "section": "Build", "hidden": true }
+    {
+      "type": "feat",
+      "section": "New Feature",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixed",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "Documentation",
+      "hidden": false
+    },
+    {
+      "type": "refactor",
+      "section": "Refactor",
+      "hidden": false
+    },
+    {
+      "type": "test",
+      "section": "Test Case",
+      "hidden": false
+    },
+    {
+      "type": "perf",
+      "section": "Optimization",
+      "hidden": false
+    },
+    {
+      "type": "revert",
+      "section": "Revert",
+      "hidden": false
+    },
+    {
+      "type": "ci",
+      "section": "CI & CD",
+      "hidden": true
+    },
+    {
+      "type": "chore",
+      "section": "Other",
+      "hidden": true
+    },
+    {
+      "type": "style",
+      "section": "Code Format",
+      "hidden": true
+    },
+    {
+      "type": "build",
+      "section": "Build",
+      "hidden": true
+    }
   ],
   "preMajor": true,
   "header": "# CHANGELOG",
@@ -20,7 +64,7 @@
   "defaultScope": "Unspecified",
   "writerOpts": {
     "groupBy": "scope",
-    "commitPartial": "{{#if type}}**{{type}}**: {{/if}}{{subject}}{{#if shortHash}} ( See commit [{{committerDate}} {{shortHash}}](https://github.com/source-club/get-started/commit/{{hash}}) ){{/if}}{{#if body}}\n\n{{body}}{{/if}}{{#if footer}}\n\n{{footer}}{{/if}}\n\n",
+    "commitPartial": "- {{#if type}}**{{type}}**: {{/if}}{{subject}}{{#if shortHash}} ( See commit [{{committerDate}} {{shortHash}}](https://github.com/source-club/get-started/commit/{{hash}}) ){{/if}}{{#if body}}\n\n{{body}}{{/if}}{{#if footer}}\n\n{{footer}}{{/if}}\n\n",
     "mainTemplate": "{{> header}}\n\n{{#each commitGroups}}\n\n### {{#if title}}{{title}}{{else}}General{{/if}}\n\n{{#each commits}}\n{{> commit root=@root}}\n{{/each}}\n{{/each}}\n\n{{> footer}}\n"
   }
 }
