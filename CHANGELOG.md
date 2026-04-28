@@ -1,4 +1,12 @@
 # CHANGELOG
+## [1.2.1](https://github.com/source-club/get-started/compare/v1.2.0...v1.2.1) (2026-04-28)
+
+
+### General
+
+- **New Feature**: 调整 commitPartial 模版配置。 ( See commit [2026-04-28 0db72c3](https://github.com/source-club/get-started/commit/0db72c3e17c6f7eee9918f22e2de127bf78ee5f7) )
+
+
 ## [1.2.0](https://github.com/source-club/get-started/compare/v1.1.3...v1.2.0) (2026-04-27)
 
 
