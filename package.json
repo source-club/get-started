@@ -34,6 +34,7 @@
     "pnpm:update:root": "pnpm update -i",
     "npx:ferrflow:init": "npx ferrflow init",
     "npx:ferrflow:check": "npx ferrflow check",
+    "npx:ferrflow:changelog": "npx ferrflow changelog",
     "npx:ferrflow:release": "npx ferrflow release",
     "npx:ferrflow:debug": "npx ferrflow release --channel debug",
     "npx:ferrflow:build": "npx ferrflow release --channel build",
@@ -43,6 +44,7 @@
     "npx:ferrflow:alpha": "npx ferrflow release --channel alpha",
     "npx:ferrflow:beta": "npx ferrflow release --channel beta",
     "npx:ferrflow:pre-release": "npx ferrflow release --channel pre-release",
+    "npx:ferrflow:try:changelog": "npx ferrflow changelog --dry-run",
     "npx:ferrflow:try:release": "npx ferrflow release --dry-run",
     "npx:ferrflow:try:debug": "npx ferrflow release --dry-run --channel debug",
     "npx:ferrflow:try:build": "npx ferrflow release --dry-run --channel build",
@@ -68,5 +70,5 @@
     "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version",
     "version:prerelease:tag": "pnpm version prerelease --preid Debug --no-git-tag-version"
   },
-  "version": "1.2.1"
+  "version": "2.0.0"
 }
