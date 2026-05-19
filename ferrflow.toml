@@ -1,0 +1,23 @@
+[workspace]
+remote = "origion"
+branch = ""
+anonymous_telemetry = false
+recover_missed_releases = false
+release_commit_mode = "commit"
+release_commit_scope = "grouped"
+auto_merge_releases = false
+floating_tags = []
+orphaned_tag_strategy = "warn"
+forge = "auto"
+versioning = "semver"
+
+[[package]]
+name = "Get-Started"
+path = "."
+changelog = "docs/change-logs/v2.md"
+shared_paths = []
+depends_on = []
+
+[[package.versioned_files]]
+path = "package.json"
+format = "json"
