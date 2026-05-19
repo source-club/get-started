@@ -1,5 +1,5 @@
 [workspace]
-remote = "origion"
+remote = "origin"
 branch = ""
 anonymous_telemetry = false
 recover_missed_releases = false
