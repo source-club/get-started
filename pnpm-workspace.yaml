@@ -5,3 +5,14 @@ link-workspace-packages: false
 prefer-workspace-packages: false
 shared-workspace-lockfile: true
 save-workspace-protocol: true
+registries:
+  default: https://registry.npmmirror.com/
+  official: https://registry.npmjs.org/
+storeDir: node_modules/.pnpm-store
+minimumReleaseAgeExclude:
+  - '@ferrflow/darwin-arm64@4.8.1'
+  - '@ferrflow/darwin-x64@4.8.1'
+  - '@ferrflow/linux-arm64@4.8.1'
+  - '@ferrflow/linux-x64@4.8.1'
+  - '@ferrflow/win32-x64@4.8.1'
+  - ferrflow@4.8.1
