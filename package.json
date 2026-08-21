@@ -6,10 +6,34 @@
   "bugs": {
     "url": "https://github.com/source-club/get-started/issues"
   },
+  "config": {
+    "commitizen": {
+      "issuePrefixes": [
+        {
+          "name": "进行中",
+          "value": "WIP"
+        },
+        {
+          "name": "完成",
+          "value": "Done"
+        },
+        {
+          "name": "关闭",
+          "value": "Closes"
+        },
+        {
+          "name": "重新打开",
+          "value": "Re-open"
+        }
+      ],
+      "scopes": []
+    }
+  },
   "description": "Git code repository template!",
   "devDependencies": {
-    "npkill": "^0.12.2",
-    "ferrflow": "^4.8.1"
+    "czg": "^1.13.2",
+    "devrun": "^0.1.1",
+    "npkill": "^0.12.2"
   },
   "homepage": "https://github.com/source-club/get-started#readme",
   "keywords": [
@@ -19,55 +43,23 @@
   ],
   "license": "MIT",
   "name": "@source-club/get-started",
+  "packageManager": "pnpm@11.22.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/source-club/get-started.git"
   },
   "scripts": {
     "dotnet:release": "dotnet tool restore && dotnet tool run nbgv prepare-release --project ./",
+    "dotnet:tool:update": "dotnet tool update --all --local",
+    "git:commit:cz": "czg",
+    "git:commit:cz:break": "czg break",
+    "git:commit:cz:checkbox": "czg checkbox",
     "git:push": "git push --tags && git push --all",
-    "pnpm:clean": "npkill -d ./",
+    "npm:packages:clear": "npkill -d ./",
     "pnpm:restore": "pnpm install --filter ./src/**",
     "pnpm:restore:root": "pnpm install",
     "pnpm:update": "pnpm update --filter ./src/** -i",
-    "pnpm:update:root": "pnpm update -i",
-    "ferrflow:init": "ferrflow init",
-    "ferrflow:check": "ferrflow check",
-    "ferrflow:changelog": "ferrflow changelog",
-    "ferrflow:release": "ferrflow release",
-    "ferrflow:debug": "ferrflow release --channel debug",
-    "ferrflow:build": "ferrflow release --channel build",
-    "ferrflow:daily": "ferrflow release --channel daily",
-    "ferrflow:nightly": "ferrflow release --channel nightly",
-    "ferrflow:weekly": "ferrflow release --channel weekly",
-    "ferrflow:alpha": "ferrflow release --channel alpha",
-    "ferrflow:beta": "ferrflow release --channel beta",
-    "ferrflow:pre-release": "ferrflow release --channel pre-release",
-    "ferrflow:try:changelog": "ferrflow changelog --dry-run",
-    "ferrflow:try:release": "ferrflow release --dry-run",
-    "ferrflow:try:debug": "ferrflow release --dry-run --channel debug",
-    "ferrflow:try:build": "ferrflow release --dry-run --channel build",
-    "ferrflow:try:daily": "ferrflow release --dry-run --channel daily",
-    "ferrflow:try:nightly": "ferrflow release --dry-run --channel nightly",
-    "ferrflow:try:weekly": "ferrflow release --dry-run --channel weekly",
-    "ferrflow:try:alpha": "ferrflow release --dry-run --channel alpha",
-    "ferrflow:try:beta": "ferrflow release --dry-run --channel beta",
-    "ferrflow:try:pre-release": "ferrflow release --dry-run --channel pre-release",
-    "workspace:version:major": "pnpm run --filter ./src/** version:major",
-    "workspace:version:minor": "pnpm run --filter ./src/** version:minor",
-    "workspace:version:patch": "pnpm run --filter ./src/** version:patch",
-    "workspace:version:premajor": "pnpm run --filter ./src/** version:premajor",
-    "workspace:version:preminor": "pnpm run --filter ./src/** version:preminor",
-    "workspace:version:prepatch": "pnpm run --filter ./src/** version:prepatch",
-    "workspace:version:prerelease": "pnpm run --filter ./src/** version:prerelease",
-    "version:major": "pnpm version major --no-git-tag-version",
-    "version:minor": "pnpm version minor --no-git-tag-version",
-    "version:patch": "pnpm version patch --no-git-tag-version",
-    "version:premajor": "pnpm version premajor --preid Debug --no-git-tag-version",
-    "version:preminor": "pnpm version preminor --preid Debug --no-git-tag-version",
-    "version:prepatch": "pnpm version prepatch --preid Debug --no-git-tag-version",
-    "version:prerelease": "pnpm version prerelease --preid Debug --no-git-tag-version",
-    "version:prerelease:tag": "pnpm version prerelease --preid Debug --no-git-tag-version"
+    "pnpm:update:root": "pnpm update -i"
   },
-  "version": "2.1.0"
+  "version": "3.0.0"
 }

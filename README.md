@@ -1,26 +1,13 @@
 # README
 
-> Repo Intro
->
-> Git repository code template!
+## 简介 Introduction
 
-## Intro
+Git-Started 项目是一个快速搭建 Git 仓库的脚手架。这里面包含了一组基于 Node、Git-Cliff、NerdBank.GitVersion 的工作流工具。
 
-### Development Environment
-
-- Microsoft Windows 11 Professional Edition
-- Microsoft VSCode
-- Git for Windows
-- Nodejs
-- Microsoft .NET
-
-## Docs
-
-### Change Logs
-
-- [CHANGELOG for v1](CHANGELOG.md)
-- [CHANGELOGS for vNext](docs/change-logs/README.md)
+## 文档 Documentation
 
 ---
 
-> LICENSED UNDER [THE MIT LICENSE](./LICENSE). SEE LICENSE FILE IN THE PROJECT ROOT FOR FULL LICENSE INFORMATION.
+> LICENSED UNDER THE MIT LICENSE. SEE [LICENSE FILE](./LICENSE.md) IN THE PROJECT ROOT FOR FULL LICENSE INFORMATION.
+
+[repo-url]: https://github.com/source-club/get-started
