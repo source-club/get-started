@@ -1,0 +1,130 @@
+# git-cliff Monorepo 配置 - 按 scope 分组
+# 适用于 packages/* 结构的 monorepo 项目
+[bump]
+features_always_bump_minor = false
+breaking_always_bump_major = false
+initial_tag = "v0.1.0"
+
+[changelog]
+header = "# CHANGELOG"
+
+# 核心: 按 scope 分组，未提供的显示为 "Unspecified"
+body = """
+
+{% if version %}\
+    {% if previous %}\
+    ## 版本 [{{ version | trim_start_matches(pat="v") }}](https://github.com/source-club/get-started/compare/{{ previous.version }}..{{ version }})
+    {% else %}\
+    ## 版本 {{ version | trim_start_matches(pat="v") }}
+    {% endif %}\
+{% else %}\
+    ## [Unreleased]
+{% endif %}\
+
+    > {{ timestamp | date(format="%Y年%m月%d日") }} **Get Started** 更新
+
+    | 摘要 | 描述说明 |
+    | ---- | ------- |
+    | 版本 | **{{ version | trim_start_matches(pat="v") }}** |
+{% if extra %}\
+    | 内部版本号 | Build **{{ timestamp | date(format="%y") }}{{ extra.current_year_commits }}.{{ timestamp | date(format="%-m") }}{{ extra.current_month_commits }}** |
+{% endif %}\
+    | 运行平台 | `Unspecified` |
+    | 技术栈 | `` |
+
+    ## 更新内容
+
+{% for scope, commits in commits | group_by(attribute="scope") %}
+    ### {{ scope | default(value="Unspecified") | upper_first }}
+    {% for commit in commits %}
+        - {% if commit.breaking %}⚠️ {% endif %}\
+            **[{{ commit.group }}]**: {{ commit.message }}\
+            {% if commit.committer %} *By @**{{ commit.committer.name }}** at {{ commit.committer.timestamp | date(format="%Y-%m-%d %H:%M:%S") }}* {% endif %}\
+            {% if commit.id %} (See [{{ commit.id | truncate(length=8, end="") }}](https://github.com/source-club/get-started/commit/{{commit.id}})){% endif %}
+        
+    {% endfor %}
+{% endfor %}
+
+{% if statistics.links | length > 0 %}
+| **Issues** | **引用次数** |
+| ---------- | ------------------- |
+{% for link in statistics.links %}\
+| **Issue [{{ link.text }}]({{ link.href }})** | **{{ link.count }}** 次 |
+{% endfor %}
+{% endif %}
+
+
+"""
+
+footer = ""
+
+trim = true
+
+# 后处理器: 格式化链接
+postprocessors = [
+  # 将 #123 转换为 GitHub issue 链接（根据实际仓库修改）
+  # { pattern = '#(\d+)', replace = "[#$1](https://cnb.cool/penghai8848/penghai-py/issues/$1)" },
+]
+
+[git]
+# 启用 Conventional Commits 解析
+conventional_commits = true
+
+# 过滤非规范提交（保留规范提交，其他归入 Unspecified）
+filter_unconventional = false
+
+# 提交预处理: 提取并标准化 scope
+commit_preprocessors = [
+  # 对于没有 scope 的提交，显式添加 scope = "unspecified"
+  # 注意: 这个预处理用于确保后续分组有默认值
+  { pattern = '^(\w+)(\(\))?:', replace = "$1(unspecified):" },
+]
+
+# ⚠️ 关键配置: 按 scope 分组，不使用默认的 type 分组
+# 通过设置 commit_parsers 为空数组 + 保护标志，强制使用默认 scope 分组
+commit_parsers = [
+  { message = "^feat", group = "新功能 Features" },
+  { message = "^fix", group = "修复 Fixes" },
+  { message = "^doc", group = "文档变更 Docs", skip = true },
+  { message = "^perf", group = "优化 Optimization" },
+  { message = "^refactor", group = "代码重构 Refactor" },
+  { message = "^style", group = "格式化 Format", skip = true },
+  { message = "^test", group = "单元测试 Unit Test", skip = false },
+  { message = "^WIP", group = "其他 Other", skip = false },
+  { message = "^chore", group = "其他 Other", skip = true },
+  { message = "^build", group = "构建 Build", skip = true },
+  { message = "^ci", group = "CI & CD", skip = true },
+  { message = ".*", group = "Other", default_scope = "其他 Other", skip = false },
+  { message = "^Merging", skip = true },
+]
+
+# 不跳过任何提交
+filter_commits = false
+
+# 保护 breaking changes
+protect_breaking_commits = true
+
+# 按 scope 排序
+sort_commits = "newest"
+
+# ---------- Monorepo 配置 ----------
+# 自动定位 Git 根目录（v2.8.0+）
+# 取消注释并配置以下内容以支持 Monorepo:
+# 参考: "apps/*/**/*", "libs/*/**/*"
+# include_paths = []
+# 3. 排除公共配置和测试文件（可选）
+# exclude_paths = []
+
+# 1. 匹配子项目的标签模式（示例: my-package-v1.0.0）
+tag_pattern = "^v[0-9].*"
+
+# ---------- 链接解析 ----------
+link_parsers = [
+  # 将 #123 格式化为 GitHub issue 链接
+  { pattern = "#(\\d+)", href = "https://github.com/source-club/get-started/issues/$1" },
+]
+
+# ---------- 远程仓库信息 ----------
+[remote]
+# 根据实际情况配置
+# github = { owner = "source-club", repo = "get-started" }
