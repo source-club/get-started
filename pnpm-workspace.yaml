@@ -1,10 +1,10 @@
 packages:
   - packages/**
   - '!**/test/**'
-link-workspace-packages: false
-prefer-workspace-packages: false
-shared-workspace-lockfile: true
-save-workspace-protocol: true
+linkWorkspacePackages: false
+preferWorkspacePackages: false
+sharedWorkspaceLockfile: true
+saveWorkspaceProtocol: true
 storeDir: node_modules/.pnpm-store
 virtualStoreDir: node_modules/.pnpm
 registries:
