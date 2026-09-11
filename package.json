@@ -43,7 +43,7 @@
   ],
   "license": "MIT",
   "name": "@source-club/get-started",
-  "packageManager": "pnpm@11.22.0",
+  "packageManager": "pnpm@12.3.4",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/source-club/get-started.git"
